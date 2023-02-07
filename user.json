@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Bob",
+    "grade": "11",
+    "username": "admin1",
+    "password": "admin123",
+    "points": 0,
+    "currentPrize": "None",
+    "admin": true,
+    "pastEvents": [],
+    "pastPrizes": [],
+    "key": 4
+  },
+  {
+    "name": "Josh",
+    "grade": "12",
+    "username": "joshP",
+    "password": "Josh90",
+    "points": 600,
+    "currentPrize": "None",
+    "admin": false,
+    "pastEvents": [],
+    "pastPrizes": [],
+    "key": 2
+  },
+  {
+    "name": "John",
+    "grade": "9",
+    "username": "John08",
+    "password": "john081",
+    "points": 400,
+    "currentPrize": "Ring",
+    "admin": false,
+    "key": 0,
+    "pastEvents": [
+      "Chess",
+      "Acting",
+      "Fencing"
+    ],
+    "pastPrizes": []
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "name": "KeyChain",
+    "points": 301,
+    "type": "Spirit Item",
+    "key": 1
+  },
+  {
+    "name": "Gift Card",
+    "type": "Food Reward",
+    "points": 600,
+    "key": 0
+  },
+  {
+    "name": "Candy",
+    "type": "School Reward",
+    "points": 100,
+    "key": 0
+  }
+]

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student</title>
+    <script src="stuNotifsPreload.js"></script>
+</head>
+
+<body onload="filter()">
+
+    <header>
+        <nav class="nav__wrapper">
+            <img class="imgt" src = "logo.png">
+            <div class="nav__menu">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="./notifications.html" <li class="nav__item"><a href="./login.html"
+                                class="nav__link">Signout</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="left__side">
+            <h1>Credentials</h1>
+            <form action="">
+                <h3 class="user"></h3><br>
+                <h3 class="grade"></h3><br>
+                <h3 class="username"></h3><br>
+                <h3 class="password"></h3><br>
+                <h3 class="points"></h3><br>
+                <h3 class="currentPrize"></h3><br>
+        </div>
+        <div class="middle">
+            <table id="event-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Points Gained</th>
+                        <th>Spots left</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table><br>
+        </div>
+        <div class="right__side">
+            <h1>Send Messages</h1>
+            <input type="text" placeholder="Message" class="message">
+            <input type="button" value="Send message" onclick="askMessage()"><br><br>
+            <input type="text" placeholder="Ask for Prize" class="prize">
+            <input type="button" value="Ask for Prize" onclick="askPrize()"><br><br>
+            <input type="button" value="Toggle admin priveleges" onclick="askAdmin()"><br><br>
+            <input type="number" min=0 placeholder="Points" class="points">
+            <input type="button" value="Ask for points" onclick="askPoints()"><br><br>
+            <h1>Log</h1>
+            <h4 class="log"></h4>
+        </div>
+        </form>
+    </div>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+        * {
+            font-family: 'JetBrains Mono', monospace;
+            scroll-behavior: smooth;
+            box-sizing: border-box;
+            scrollbar-width: none;
+            user-select: none;
+            color: #000;
+            padding: 0;
+            margin: 0;
+        }
+
+        *::-webkit-scrollbar {
+            display: none;
+        }
+
+        body {
+            background-color: #fff;
+        }
+
+        header {
+            background-color: #777;
+            position: fixed;
+            padding: 1.5rem;
+            display: flex;
+            z-index: 999;
+            height: 0rem;
+            width: 100%;
+            top: 0;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .nav__wrapper {
+            align-items: center;
+            display: flex;
+        }
+
+        .material-symbols-outlined {
+            cursor: pointer;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown__list {
+            top: 3rem;
+            left: 0;
+            display: none;
+            position: absolute;
+            background-color: #777;
+            min-width: 100vw;
+            overflow: auto;
+            z-index: 1;
+            padding: 1rem;
+        }
+
+        .dropdown__link {
+            display: block;
+        }
+
+        .second {
+            margin-top: 1rem;
+        }
+
+        .show {
+            display: block;
+        }
+
+        .nav__menu {
+            position: absolute;
+            right: 1.5rem;
+        }
+
+        .nav__list {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav__link {
+            transition: .3s;
+        }
+
+        .nav__link:hover {
+            background-color: #666;
+            border-radius: .5rem;
+            padding: .5rem;
+        }
+
+        .container {
+            position: relative;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 5fr 1fr;
+            margin-top: 3rem;
+        }
+
+        .left__side {
+            background-color: #bd7d7d;
+            position: relative;
+            padding: 2rem;
+        }
+
+        .middle {
+            background-color: #ac9d9d;
+            position: relative;
+            min-height: calc(100vh - 3rem);
+            padding: 2rem;
+        }
+
+        .right__side {
+            background-color: #bd7d7d;
+            position: relative;
+            padding: 2rem;
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        select,
+        input {
+            padding: .25rem;
+            border: none;
+            border-radius: .25rem;
+        }
+
+        input[type=button] {
+            padding: .25rem;
+            border: none;
+            background-color: #ff6969;
+            border-radius: .5rem;
+            transition: .15s;
+        }
+
+        .limit__width {
+            width: 100%;
+
+        }
+
+        input[type=button]:hover {
+            color: #fff;
+        }
+
+        /* action buttons */
+        button {
+            padding: .25rem;
+            border: none;
+            background-color: #69daff;
+            border-radius: .5rem;
+            transition: .15s;
+        }
+
+        .imgt {
+            width: 100;
+            height: 50px;
+        }
+
+        button:hover {
+            color: #fff;
+        }
+
+
+        table {
+            border-collapse: collapse;
+            color: #fff;
+            text-align: center;
+            width: 100%;
+        }
+
+        thead {
+            background-color: #ccc;
+        }
+
+        tbody {
+            background-color: #ddd;
+        }
+
+        tr:nth-child(even) {
+            background-color: #ccc;
+        }
+
+        th,
+        td {
+            padding: .5rem;
+            overflow: hidden;
+        }
+    </style>
+</body>
+
+</html>

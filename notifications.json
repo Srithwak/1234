@@ -1,0 +1,40 @@
+[
+  {
+    "type": "adminPriveleges",
+    "name": "John",
+    "message": "",
+    "actions": [
+      "delete",
+      "makeAdmin",
+      "removeAdmin",
+      "read/unread"
+    ],
+    "read": false,
+    "key": 0
+  },
+  {
+    "type": "message",
+    "name": "John",
+    "message": "Change username to John746",
+    "actions": [
+      "delete",
+      "read/unread"
+    ],
+    "read": true,
+    "key": 1
+  },
+  {
+    "type": "prizeAssign",
+    "name": "Josh",
+    "prizeName": "KeyChain",
+    "message": "I would like the prize",
+    "actions": [
+      "delete",
+      "givePrize",
+      "removePrize",
+      "read/unread"
+    ],
+    "read": false,
+    "key": 2
+  }
+]

@@ -1,0 +1,30 @@
+[
+  {
+    "event": "Football",
+    "eventType": "nonSports",
+    "pointsGained": 10,
+    "limit": 80,
+    "key": 1
+  },
+  {
+    "event": "Soccer",
+    "eventType": "sports",
+    "pointsGained": 10,
+    "limit": 90,
+    "key": 2
+  },
+  {
+    "event": "Pep Rally",
+    "eventType": "nonSports",
+    "pointsGained": 10,
+    "limit": 1,
+    "key": 3
+  },
+  {
+    "event": "Volunteering",
+    "eventType": "nonSports",
+    "pointsGained": 10,
+    "limit": 7,
+    "key": 4
+  }
+]
